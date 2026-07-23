@@ -1,4 +1,4 @@
-import pygame
+imupdateableport pygame
 
 # Base class for game objects
 class CircleShape(pygame.sprite.Sprite):
