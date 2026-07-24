@@ -1,4 +1,4 @@
-imupdateableport pygame
+import pygame
 
 # Base class for game objects
 class CircleShape(pygame.sprite.Sprite):
@@ -22,3 +22,7 @@ class CircleShape(pygame.sprite.Sprite):
     def update(self, dt: float) -> None:
         # must override
         pass
+
+    def collides_with(self, other: pygame.sprite.Sprite) -> None:
+        distance = pygame.math.Vector2.distance_to(self.position, other.position)
+        return distance <= (self.radius + other.radius)
